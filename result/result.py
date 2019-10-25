@@ -8,12 +8,13 @@ def grades(data):
     grade = []
     for semester in data:
         # print(semester["semester"])
-        grade.append(f"{semester['semester']}\nSemester: {semester['semester']}, \nCGPA: {semester['sgpa']}")
+        grade.append(f"{semester['semester']}Semester: {semester['semester']}CGPA: {semester['sgpa']}")
         # print("Semester: ", semester["semester"], "\nCGPA: ", semester["sgpa"])
         for sub in semester["subject"]:
             # grade[semester["semester"]]["Subject"] = sub["subject_name"]
             # grade[semester["semester"]]["Result"] = sub["result"]
             # print("Subject: ", sub["subject_name"], "\nResult: ", sub["result"])
+            grade.append(f"Subject: {sub['subject_name']}Result: {sub['result']}")
             pass
     print(grade)
     return grade
