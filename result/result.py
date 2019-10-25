@@ -8,7 +8,7 @@ def grades(data):
     grade = ""
     for semester in data:
         # print(semester["semester"])
-        grade += f"Semester: {semester['semester']}\nCGPA: {round(semester['sgpa'], 3)}\n"
+        grade += f"\nSemester: {semester['semester']}\nCGPA: {round(semester['sgpa'], 3)}\n"
         # print("Semester: ", semester["semester"], "\nCGPA: ", semester["sgpa"])
         for sub in semester["subject"]:
             # grade[semester["semester"]]["Subject"] = sub["subject_name"]
