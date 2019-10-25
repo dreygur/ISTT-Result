@@ -8,7 +8,7 @@ def grades(data):
     grade = []
     for semester in data:
         # print(semester["semester"])
-        grade.append(f"{semester['semester']}Semester: {semester['semester']}CGPA: {semester['sgpa']}")
+        grade.append(f"Semester: {semester['semester']}CGPA: {semester['sgpa']}")
         # print("Semester: ", semester["semester"], "\nCGPA: ", semester["sgpa"])
         for sub in semester["subject"]:
             # grade[semester["semester"]]["Subject"] = sub["subject_name"]
@@ -38,7 +38,7 @@ def result(reg):
         # }]
         grade = grades(data["semesters"])
         return [{
-            "text": f"{name}\nREG:{regn}\nCollege: {college}\n {grade}",
+            "text": f"{name}\nREG:{regn}\nCollege: {college}\n {str(grade)}",
         }]
     except IndexError:
         print("Reg not Found!")
