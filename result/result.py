@@ -37,9 +37,7 @@ def result(reg):
         # }]
         grade = grades(data["semesters"])
         return [{
-            "text": f"{name}\nREG:{regn}\nCollege: {college}\n"
-        }, {
-            "text": grade
+            "text": f"{name}\nREG:{regn}\nCollege: {college}\n {grade}",
         }]
     except IndexError:
         print("Reg not Found!")
