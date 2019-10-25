@@ -26,8 +26,7 @@ def result(reg):
         #     "text": f"{name}\n{regn}\n{college}\n{sems}"
         # }]
         return [{
-            "text": f"{name}\nREG:{regn}",
-            "text": f"College: {college}\n"
+            "text": f"{name}\nREG:{regn}\nCollege: {college}\n"
         }]
     except IndexError:
         print("Reg not Found!")
