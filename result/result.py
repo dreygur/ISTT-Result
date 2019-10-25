@@ -5,16 +5,16 @@ import json
 import requests as rq
 
 def grades(data):
-    grade = []
+    grade = ""
     for semester in data:
         # print(semester["semester"])
-        grade.append(f"Semester: {semester['semester']}CGPA: {round(semester['sgpa'], 3)}")
+        grade += f"Semester: {semester['semester']}\nCGPA: {round(semester['sgpa'], 3)}\n"
         # print("Semester: ", semester["semester"], "\nCGPA: ", semester["sgpa"])
         for sub in semester["subject"]:
             # grade[semester["semester"]]["Subject"] = sub["subject_name"]
             # grade[semester["semester"]]["Result"] = sub["result"]
             # print("Subject: ", sub["subject_name"], "\nResult: ", sub["result"])
-            grade.append(f"Subject: {sub['subject_name']}Result: {sub['result']}")
+            grade += f"Subject: {sub['subject_name']}\nResult: {sub['result']}\n"
             pass
     print(grade)
     return grade
@@ -38,7 +38,7 @@ def result(reg):
         # }]
         grade = grades(data["semesters"])
         return [{
-            "text": f"{name}\nREG:{regn}\nCollege: {college}\n {str(grade)}",
+            "text": f"{name}\nREG:{regn}\nCollege: {college}\n{grade}"
         }]
     except IndexError:
         print("Reg not Found!")
