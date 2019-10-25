@@ -34,5 +34,7 @@ def result(reg):
     except KeyboardInterrupt:
         print('\nExiting...')
         sys.exit()
-    except Exception as e:
-        print(e)
+    except Exception:
+        return [{
+            "text": "Please check your Registration number again!"
+        }]
