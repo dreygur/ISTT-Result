@@ -4,6 +4,7 @@ import json
 import requests
 from flask import Flask
 from flask import request
+from flask import jsonify
 
 # My custom functions
 from result.search import search
@@ -24,7 +25,8 @@ def reslt():
         regn = request.args.get('reg')
         res = result(regn)
         print(year, regn)
-        return json.dumps({"messages": res})
+        # return json.dumps({"messages": res})
+        return jsonify({"messages": res})
     except:
         return 'An Internal Error Occured!'
 
