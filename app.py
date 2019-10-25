@@ -17,7 +17,7 @@ def main():
     return "Hola amigo!!!"
 
 
-@app.route('/result/', methods=["GET"])
+@app.route('/result/', methods=["GET", "POST"])
 def reslt():
     try:
         year = request.args.get('year')
