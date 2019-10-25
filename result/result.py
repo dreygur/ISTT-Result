@@ -22,9 +22,10 @@ def result(reg):
         # return name, regn, college
         # return data
         # return name, regn, college, sems
-        return [{
-            "text": f"{name}\n{regn}\n{college}\n{sems}"
-            }]
+        # return [{
+        #     "text": f"{name}\n{regn}\n{college}\n{sems}"
+        # }]
+        return name
     except IndexError:
         print("Reg not Found!")
         pass
