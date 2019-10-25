@@ -16,7 +16,6 @@ app = Flask("ISTT NU Result")
 def main():
     return "Hola amigo!!!"
 
-
 @app.route('/result/', methods=["GET"])
 def reslt():
     try:
