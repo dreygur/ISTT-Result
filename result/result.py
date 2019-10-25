@@ -23,7 +23,9 @@ def result(reg):
         # return data
         # return name, regn, college, sems
         return [{
-            "text": f"{name}\n{regn}\n{college}\n{sems}"
+            "messages": [
+                {"text": f"{name}\n{regn}\n{college}\n{sems}"}
+            ]
         }]
     except IndexError:
         print("Reg not Found!")
