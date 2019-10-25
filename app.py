@@ -23,7 +23,8 @@ def reslt():
         year = request.args.get('year')
         regn = request.args.get('reg')
         res = result(regn)
-        return json.dumps(res)
+        print(year, regn)
+        return json.dumps({"messages": res})
     except:
         return 'An Internal Error Occured!'
 

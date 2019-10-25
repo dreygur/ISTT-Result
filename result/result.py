@@ -22,14 +22,14 @@ def result(reg):
         # return name, regn, college
         # return data
         # return name, regn, college, sems
-        return json.dump([{
-            "messages": [
-                {"text": f"{name}\n{regn}\n{college}\n{sems}"}
-            ]
-        }])
+        return [{
+            "text": f"{name}\n{regn}\n{college}\n{sems}"
+            }]
     except IndexError:
         print("Reg not Found!")
         pass
     except KeyboardInterrupt:
         print('\nExiting...')
         sys.exit()
+    except Exception as e:
+        print(e)
