@@ -24,8 +24,8 @@ def reslt():
         regn = request.args.get('reg')
         res = result(regn)
         return json.dumps(res)
-    except:
-        return 'An Internal Error Occured!'
+    except Exception as e:
+        return e
 
 @app.route('/api/<regn>')
 def api(regn):
