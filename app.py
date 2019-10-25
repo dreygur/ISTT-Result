@@ -16,6 +16,7 @@ app = Flask("ISTT NU Result")
 def main():
     return "Hola amigo!!!"
 
+
 @app.route('/result/', methods=["GET"])
 def reslt():
     try:
@@ -23,8 +24,8 @@ def reslt():
         regn = request.args.get('reg')
         res = result(regn)
         return json.dumps(res)
-    except Exception as e:
-        return e
+    except:
+        return 'An Internal Error Occured!'
 
 @app.route('/api/<regn>')
 def api(regn):
