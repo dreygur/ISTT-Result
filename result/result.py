@@ -5,14 +5,14 @@ import json
 import requests as rq
 
 def grades(data):
-    grade = dict()
+    grade = []
     for semester in data:
         # print(semester["semester"])
-        grade[semester["semester"]] = {"Semester": semester["semester"], "\nCGPA": semester["sgpa"]}
+        grade.append(f"{semester['semester']}\nSemester: {semester['semester']}, \nCGPA: {semester['sgpa']}")
         # print("Semester: ", semester["semester"], "\nCGPA: ", semester["sgpa"])
         for sub in semester["subject"]:
-            grade[semester["semester"]]["Subject"] = sub["subject_name"]
-            grade[semester["semester"]]["Result"] = sub["result"]
+            # grade[semester["semester"]]["Subject"] = sub["subject_name"]
+            # grade[semester["semester"]]["Result"] = sub["result"]
             # print("Subject: ", sub["subject_name"], "\nResult: ", sub["result"])
             pass
     print(grade)
