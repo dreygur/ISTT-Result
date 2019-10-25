@@ -4,6 +4,20 @@ import sys
 import json
 import requests as rq
 
+def grades(data):
+    grade = dict()
+    for semester in data:
+        # print(semester["semester"])
+        grade[semester["semester"]] = {"Semester": semester["semester"], "\nCGPA": semester["sgpa"]}
+        # print("Semester: ", semester["semester"], "\nCGPA: ", semester["sgpa"])
+        for sub in semester["subject"]:
+            grade[semester["semester"]]["Subject"] = sub["subject_name"]
+            grade[semester["semester"]]["Result"] = sub["result"]
+            # print("Subject: ", sub["subject_name"], "\nResult: ", sub["result"])
+            pass
+    print(grade)
+    return grade
+
 def result(reg):
     try:
         header = {
@@ -18,15 +32,14 @@ def result(reg):
         regn = data['registration_number']
         college = data['college']
         sems = data['semesters']
-        # print(name, regn, college)
-        # return name, regn, college
-        # return data
-        # return name, regn, college, sems
         # return [{
-        #     "text": f"{name}\n{regn}\n{college}\n{sems}"
+        #     "text": f"{name}\nREG:{regn}\nCollege: {college}\n"
         # }]
+        grade = grades(data["semesters"])
         return [{
             "text": f"{name}\nREG:{regn}\nCollege: {college}\n"
+        }, {
+            "text": grade
         }]
     except IndexError:
         print("Reg not Found!")
