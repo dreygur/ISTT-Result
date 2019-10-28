@@ -10,6 +10,7 @@ from flask import jsonify
 from result.search import search
 from result.intro import welcome
 from result.result import result
+from birthday import wish
 
 app = Flask("ISTT NU Result")
 
@@ -34,6 +35,10 @@ def reslt():
 def api(regn):
     res = search(regn)
     return json.dumps(res)
+
+@app.route('/bday/')
+def bday():
+    return wish()
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
