@@ -36,9 +36,12 @@ def api(regn):
     res = search(regn)
     return json.dumps(res)
 
-@app.route('/bday/')
-def bday():
-    return wish()
+try:
+    @app.route('/bday/')
+    def bday():
+        return wish()
+except Exception:
+    pass
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
