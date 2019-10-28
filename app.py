@@ -5,12 +5,12 @@ import requests
 from flask import Flask
 from flask import request
 from flask import jsonify
+from flask import render_template
 
 # My custom functions
 from result.search import search
 from result.intro import welcome
 from result.result import result
-from birthday import wish
 
 app = Flask("ISTT NU Result")
 
@@ -36,12 +36,9 @@ def api(regn):
     res = search(regn)
     return json.dumps(res)
 
-try:
-    @app.route('/bday/')
-    def bday():
-        return wish()
-except Exception:
-    pass
+@app.route('/bday/')
+def bday():
+    render_template("bday.html")
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
