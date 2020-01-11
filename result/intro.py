@@ -7,11 +7,7 @@ def welcome(name):
     #                 '@Bot Version - 0.1\n\n'
     #                 '@Main Web App: \n\n'
     #                 '@Contact:\n\n'
-    #                 'http://facebook.com/ikbal.nayem/\n\n'
-    #                 'http://facebook.com/xayed42/\n\n'
-    #                 '@G-Mail: \n\n'
-    #                 'xayed42@gmail.com\n\n'
-    #                 'ikbalnayem000@gmail.com\n\n'
+    #                 'http://facebook.com/dreygur/\n\n'
     #                 'Thank you. Enjoy.'.format(name)
     #     }
     # ]
