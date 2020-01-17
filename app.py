@@ -40,6 +40,13 @@ def api(regn):
 def bday():
     render_template("bday.html")
 
+@app.route('/fb/', methods=["GET"])
+def fb():
+    if request.args.get('hub.verify_token') == 'honululu':
+        return request.args.get('hub.challenge')
+    else:
+        return "Error!"
+    
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.debug = True
